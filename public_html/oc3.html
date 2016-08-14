@@ -1,0 +1,76 @@
+<section id="oc3" data-role="page">
+    <header data-role="header" data-position="fixed">
+        <a class="ui-btn ui-icon-arrow-l ui-btn-right 
+           ui-btn-icon-left" data-rel="back">ก่อนหน้า</a>
+        <a class="ui-btn ui-icon-arrow-r ui-btn-left
+           ui-btn-icon-right" href="">ถัดไป</a>   
+        <h1>กล้วยไม้ตามฤดูกาล</h1>
+    </header>
+    <div data-role="content" class="ui-content">
+        <h1>List View</h1>
+        <form class="ui-filterable">
+            <input data-type="search" id="filter1">
+        </form>
+        <ul data-role="listview" data-inset="true"
+            data-filter="true" data-input="#filter1">
+            <li data-icon="plus">                
+                <a href="">
+                    <img src="images/Mario-icon.png">
+                    <h3>abc</h3>
+                    <p>aaaaa</p>
+                    <span class="ui-li-count">10</span>
+                </a>
+                <a href=""></a>
+            </li>
+            <li data-role="list-divider">100</li>
+            <li data-filtertext="11130"><a href="">บางกรวย</a></li>
+            <li><a href="">ghi</a></li>
+        </ul>
+        <div data-role="collapsible">
+        <h3>Listview ABC</h3>
+        <ul data-role="listview" data-inset="true"
+            data-autodividers="true">
+            <li><a href="">A123</a></li>
+            <li><a href="">A456</a></li>
+            <li><a href="">B123</a></li>
+            <li><a href="">B456</a></li>
+            <li><a href="">C123</a></li>
+        </ul>
+        </div>
+        
+        <div class="ui-grid-solo">
+            <div class="ui-block-a">
+                <button>OK</button>
+            </div>
+        </div>
+        <div class="ui-grid-a" >
+            <div class="ui-block-a">
+                <button>OK1</button>
+            </div>
+            <div class="ui-block-b">
+               <button>OK2</button> 
+            </div>
+            <div class="ui-block-a">
+                <button>OK3</button>
+            </div>
+            <div class="ui-block-b">
+               <button>OK4</button> 
+            </div>
+            <div class="ui-block-a">
+               <button>OK5</button> 
+            </div>
+            <div class="ui-block-a">
+               <button>OK6</button> 
+            </div>
+        </div>
+        
+            
+        
+    </div>
+    <footer data-role="footer" style="text-align: center"
+            data-position="fixed" data-fullscreen="true">
+        <a href="" class="ui-btn ui-btn-icon-top ui-icon-user">เกี่ยวกับเรา</a>
+        <a href="" class="ui-btn ui-btn-icon-top ui-icon-home">หน้าหลัก</a>
+        <a href="" class="ui-btn ui-btn-icon-top ui-icon-grid">เมนู</a>        
+    </footer>
+</section>

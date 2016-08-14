@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <script src="jquery.min.js"></script>
+
+</head>
+<body>
+<div class="box-content">
+    <h4 class="page-header">เลือกหน่วยงาน</h4>
+    <div class="form-horizontal" role="form">
+        <div class="form-group has-warning has-feedback">
+            <label class="col-sm-2 control-label">สังกัด</label>
+            <div class="col-sm-2">
+               ฝ่าย : <select id="divi" name="divi"  onchange="get_gong(this);">
+                <option value=""></option>
+                    <option value="1">ชฟฟ2.</option>
+                    <option value="2">อฟม.</option>
+                    <option value="3">อรม.</option>
+                    <option value="4">อจม.</option>
+                    <option value="5">อฟพ.</option>
+                    <option value="6">ชฟฟ2./ศกม-ฟ.</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                กอง : <select id="dept" name="dept"  onchange="get_sec();" >
+                  <option value=""></option>
+                </select>
+            </div>
+
+
+
+    </div>
+    </div>
+
+
+
+   </div>
+
+</body>
+</html>
+ <script type="text/javascript">
+
+                function get_gong(g_id){
+//                  var id= $("#divi").val();
+                  var id=g_id.value;
+                  var url='http://10.249.99.133/kss/ajax/get_gong.php?id='+id;
+                  $('#dept option').remove();
+                  $("#dept").append("<option value=''></option>");
+                  $('#sec option').remove();
+                  $("#sec").append("<option value=''></option>");
+
+                    $.getJSON(url,function(data){
+                    //  console.log(data);
+                    $.each(data, function (key, val) {
+                       $("#dept").append("<option value="+val['g_id']+">"+val['g_name']+"</option>");
+                    });
+                  });
+                  //get แผนกที่ไม่มีกอง
+                  var url='http://10.249.99.133/kss/ajax/get_secnogong.php?id='+id;
+                  $('#sec option').remove();
+                    $("#sec").append("<option value=''></option>");
+                    $.getJSON(url,function(data){
+                    //  console.log(data);
+                    $.each(data, function (key, val) {
+                       $("#sec").append("<option value="+val['s_id']+">"+val['s_name']+"</option>");
+                    });
+                  });
+                  if(id!=''){
+                    $('#go_btn').attr('disabled',false);
+                  }else{
+                    $('#go_btn').attr('disabled','disabled');
+                  }
+                }
+
+</script>
